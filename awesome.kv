@@ -1,0 +1,55 @@
+<FirstWindow>
+
+
+    BoxLayout:
+
+
+
+        orientation:"vertical"
+        size: root.width, root.height
+
+
+        padding: 50
+        spacing: 20
+
+
+
+
+
+
+        Button:
+            text: "Hello"
+
+
+        Button:
+            text: "Hey"
+            font_size: 32
+
+
+
+
+        Button:
+            text: "Hi"
+            pos_hint:{'center_x':0.5}
+            size_hint: (1,1)
+            background_color:(1,1,1,1)
+            on_press:
+                root.manager.transition.direction = "left"
+                root.manager.transition.duration = 1
+                root.manager.current = "second_window"
+
+
+# Background of a label as an image
+        Label:
+            text:"Name"
+
+            bold:True
+
+            background_color:(1,1,1,1)
+            canvas.before:
+                Rectangle:
+                    size:self.size
+                    pos:self.pos
+                    source:'markus-spiske-xekxE_VR0Ec-unsplash.jpg'
+
+
